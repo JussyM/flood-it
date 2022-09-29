@@ -14,7 +14,7 @@ find_package(Qt6 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(floodit main.cpp model/board.cpp model/board.h model/game.cpp model/game.h)
+add_executable(floodit main.cpp model/board.cpp model/board.h model/game.cpp model/game.h controller/application.cpp controller/application.h gui/game_info.cpp gui/game_info.h gui/game_info.ui)
 target_link_libraries(floodit
         Qt::Core
         Qt::Gui
