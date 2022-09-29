@@ -15,5 +15,6 @@ game::game() {
 
 void game::initialize() {
     this->game_board.init_board();
+    this->square_token.emplace_back(0, 0);
 
 }
