@@ -1,0 +1,9 @@
+# ninja log v5
+78	2378	1663942320654270692	CMakeFiles/floodit.dir/main.cpp.o	16342e2c3255605e
+78	108	1663942318384270570	CMakeFiles/floodit.dir/floodit_autogen/mocs_compilation.cpp.o	a0fe32c9be502c84
+0	77	1663942318354270569	/home/jussymi/CLionProjects/floodit-cpp/floodit/cmake-build-debug/floodit_autogen/timestamp	38be29eccddc1857
+2378	2749	1663942321020937379	floodit	8246a7aba086db2a
+0	77	1663942318354270569	floodit_autogen/timestamp	38be29eccddc1857
+78	114	1663942318390937237	CMakeFiles/floodit.dir/model/board.cpp.o	8a756ab0731058e6
+0	77	1663942318354270569	floodit_autogen/mocs_compilation.cpp	38be29eccddc1857
+0	77	1663942318354270569	/home/jussymi/CLionProjects/floodit-cpp/floodit/cmake-build-debug/floodit_autogen/mocs_compilation.cpp	38be29eccddc1857

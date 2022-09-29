@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "floodit",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "floodit::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-floodit-Debug-f5d4512d031329a4859a.json",
+					"name" : "floodit",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "floodit_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-floodit_autogen-Debug-ee659803d02d7681ae3b.json",
+					"name" : "floodit_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "floodit_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-floodit_autogen_timestamp_deps-Debug-54b43ab310b6d423130d.json",
+					"name" : "floodit_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/jussymi/CLionProjects/floodit-cpp/floodit/cmake-build-debug",
+		"source" : "/home/jussymi/CLionProjects/floodit-cpp/floodit"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
