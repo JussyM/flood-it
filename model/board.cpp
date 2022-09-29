@@ -23,3 +23,19 @@ void board::init_board() {
 color **board::getSquare() const {
     return square_;
 }
+
+int board::getRow() const {
+    return row_;
+}
+
+int board::getColumn() const {
+    return column_;
+}
+
+color board::get_color_at(position p) {
+    return square_[p.x_][p._y];
+}
+
+void board::set_color_at(position p, color c) {
+square_[p.x_][p._y]=c;
+}

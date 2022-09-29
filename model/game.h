@@ -16,13 +16,24 @@ static constexpr const direction RIGHT{0,-1};
 
 };
 class game {
-    color the_chosen_one;
-    std::vector<position> square_token;
-    board game_board;
 public:
+    void setTheChosenOne(color theChosenOne);
     game(int,int,int);
     game();
     void initialize();
+    void update_game();
+
+
+
+private:
+    std::vector<position> square_token;
+    board game_board;
+    color the_chosen_one;
+    std::array<position,4> get_neighbours(position);
+    bool is_inside_board(position p);
+    bool has_super_neighbor(position p);
+    bool inside_squre_token(position p);
+
 
 
 
