@@ -32,7 +32,7 @@ std::array<position, 4> game::get_neighbours(position p) {
 }
 
 bool game::is_inside_board(position p) {
-    return p.x_ >= 0 && p.x_ < this->game_board.getRow() && p._y >= 0 && p._y > game_board.getColumn();
+    return p.x_ >= 0 && p.x_ < this->game_board.getRow() && p._y >= 0 && p._y < game_board.getColumn();
 }
 
 void game::update_game() {
@@ -49,8 +49,8 @@ void game::update_game() {
             if (!inside_squre_token(tmp)) {
                 node_center = tmp;
                 if (has_super_neighbor(node_center)) {
-                    auto n = get_neighbours(node_center);
-                    std::for_each(n.begin(), n.end(), [this](position p) {
+                    auto neighbours = get_neighbours(node_center);
+                    std::for_each(neighbours.begin(), neighbours.end(), [this](position p) {
                         auto square_color = this->game_board.get_color_at(p);
                         if (!this->inside_squre_token(p) && this->is_inside_board(p) &&
                             square_color == the_chosen_one) {

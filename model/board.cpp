@@ -6,10 +6,6 @@
 
 board::board(int row, int column, int nbColor) : row_(row), column_(column), nb_color(nbColor) {}
 
-board::board() {
-
-}
-
 void board::init_board() {
     he2b::nvs::randomize();
     for (int i = 0; i < this->row_; ++i) {
