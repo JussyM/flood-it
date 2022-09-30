@@ -2,13 +2,11 @@
 #include <QPushButton>
 #include "model/game.h"
 #include "gui/floodit_gui.h"
+#include "controller/application.h"
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
-    auto g_= game();
-    g_.initialize();
-    auto gui = new floodit_gui();
-    gui->init_and_show(g_);
-    gui->show();
+    auto app = new application(nullptr);
+    app->start();
     return QApplication::exec();
 }

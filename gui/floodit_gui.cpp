@@ -27,7 +27,6 @@ void floodit_gui::init_and_show(game game_) {
             auto square_color = game_.get_color_at(pos);
             auto square_label = new QLabel();
             switch (square_color) {
-
                 case BLUE:
                     square_label->setStyleSheet("background : blue");
                     break;
@@ -57,13 +56,13 @@ void floodit_gui::init_and_show(game game_) {
         }
 
     }
-    init_color_button(game_);
     this->ui->maxturn->setText(QString::number(game_.getMaxclick()));
     this->ui->nbturn->setText(QString::number(game_.getNbclick()));
 }
 
 void floodit_gui::init_color_button(game g_) {
 auto nb_colors = g_.get_nb_color();
+this->color_buttons.reserve(nb_colors);
     for (int i = 1; i <=nb_colors; ++i) {
         auto c = static_cast<color>(i);
         auto button_color = new color_button(nullptr, c);
@@ -93,6 +92,18 @@ auto nb_colors = g_.get_nb_color();
                 button_color->setStyleSheet("background : orange");
                 break;
         }
+        this->color_buttons.push_back(button_color);
         this->ui->colorLayout->addWidget(button_color);
     }
+}
+
+const std::vector<color_button *> &floodit_gui::getColorButtons() const {
+    return color_buttons;
+}
+
+void floodit_gui::update(game g) {
+    for (auto element:this->ui->gameLayout->children())
+        delete element;
+
+    init_and_show(g);
 }

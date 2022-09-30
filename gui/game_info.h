@@ -6,6 +6,7 @@
 #define FLOODIT_GAME_INFO_H
 
 #include <QWidget>
+#include <QPushButton>
 
 
 QT_BEGIN_NAMESPACE
@@ -21,7 +22,7 @@ public:
     bool close_windows() {
         return this->close();
     }
-
+    auto get_ok_button(){return this;}
     ~game_info() override;
 
 private:
@@ -31,9 +32,11 @@ public:
 
 private:
     Ui::game_info *ui;
-private slots:
+    QPushButton *launch_game;
+public:
+    QPushButton *getLaunchGame() const;
 
-    void send_to_game();
+    void set_data_game();
 
 };
 
