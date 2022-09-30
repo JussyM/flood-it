@@ -11,6 +11,14 @@
 enum color {
     BLUE = 1, GREEN, YELLOW, PINK, BLACK, RED, PURPLE, ORANGE
 };
+struct node{
+    color node_color;
+    node()=default;
+};
+struct nodes{
+    std::vector<node>column;
+
+};
 
 /**
  * structure to defined position inside the board
@@ -82,9 +90,19 @@ private:
     int row_;
     int column_;
     int nb_color;
-    color **square_;
 
-    color **getSquare() const;
+public:
+    int getNbColor() const;
+
+/**
+ * Initialize board by creating each attribute and filling the board
+ */
+void init_board();
+
+private:
+    std::vector<nodes> square_;
+
+
 
 public:
     /**
@@ -111,15 +129,14 @@ public:
  * @return column
  */
     int getColumn() const;
-    /**
-     * Initialize board by creating each attribute and filling the board
-     */
-    void init_board();
+
+
     /**
      * return a color at a certain position
      * @return color enum
      */
     color get_color_at(position);
+
     /**
      * set a color at a specific position
      */

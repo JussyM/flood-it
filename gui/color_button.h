@@ -8,7 +8,7 @@
 
 #include <QPushButton>
 #include "../model/board.h"
-class color_button : QPushButton {
+class color_button : public QPushButton {
 Q_OBJECT
 color button_color;
 signals:
@@ -16,7 +16,7 @@ signals:
 protected:
     void mousePressEvent(QMouseEvent*)override;
 public:
-    explicit color_button(QWidget*parent= nullptr,const color=color::BLACK);
+    explicit color_button(QWidget*parent= nullptr,color=color::BLACK);
 
     color getButtonColor() const;
 

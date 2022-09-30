@@ -41,13 +41,27 @@ public:
      * update the board when player choose his color
      */
     void update_game();
-
-
+    std::pair<int,int>get_row_and_col()
+    {
+        return std::pair<int,int>{game_board.getRow(),game_board.getColumn()};
+    }
+    color get_color_at(position p){
+        return game_board.get_color_at(p);
+    }
+    auto get_nb_color(){return  game_board.getNbColor();}
 
 private:
     std::vector<position> square_token;
     board game_board;
     color the_chosen_one;
+    int maxclick=25;
+public:
+    int getMaxclick() const;
+
+    int getNbclick() const;
+
+private:
+    int nbclick;
     /**
      * get all the neighbors of a particular position
      * @return std::array of position

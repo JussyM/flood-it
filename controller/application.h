@@ -6,7 +6,10 @@
 #define FLOODIT_APPLICATION_H
 
 
-class application {
+#include <QObject>
+
+class application : public QObject{
+Q_OBJECT
 
 };
 

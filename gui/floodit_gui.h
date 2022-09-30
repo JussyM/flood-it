@@ -6,6 +6,7 @@
 #define FLOODIT_FLOODIT_GUI_H
 
 #include <QWidget>
+#include "../model/game.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -17,10 +18,11 @@ Q_OBJECT
 
 public:
     explicit floodit_gui(QWidget *parent = nullptr);
-
     ~floodit_gui() override;
+    void init_and_show(game);
 
 private:
+    void init_color_button(game);
     Ui::floodit_gui *ui;
 };
 

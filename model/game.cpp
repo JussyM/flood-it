@@ -17,6 +17,10 @@ game::game() {
 void game::initialize() {
     this->game_board.init_board();
     this->square_token.emplace_back(0, 0);
+    auto row = game_board.getRow();
+    auto col = game_board.getColumn();
+    auto nbcolor = game_board.getNbColor();
+    maxclick = floor(25*(row*col)*nbcolor/((14+14)*6));
 
 }
 
@@ -57,7 +61,6 @@ void game::update_game() {
                             this->square_token.push_back(p);
                             this->game_board.set_color_at(p, the_chosen_one);
                         }
-
                     });
                     this->game_board.set_color_at(node_center, the_chosen_one);
                 }
@@ -66,6 +69,7 @@ void game::update_game() {
 
         }
     }
+    nbclick++;
 
 }
 
@@ -79,4 +83,12 @@ bool game::has_super_neighbor(position p) {
 
 bool game::inside_squre_token(position p) {
     return std::any_of(square_token.begin(), square_token.end(), p);
+}
+
+int game::getMaxclick() const {
+    return maxclick;
+}
+
+int game::getNbclick() const {
+    return nbclick;
 }
