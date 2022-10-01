@@ -17,25 +17,47 @@ class game_info : public QWidget {
 Q_OBJECT
 
 public:
+    /**
+     *
+     * @param parent
+     */
     explicit game_info(QWidget *parent = nullptr);
 
+/**
+ *
+ * @return
+ */
     bool close_windows() {
         return this->close();
     }
-    auto get_ok_button(){return this;}
+
+    /**
+     *
+     */
     ~game_info() override;
 
 private:
     std::array<int, 3> board_information;
 public:
-    const std::array<int, 3> &getBoardInformation() const;
+    /**
+     *
+     * @return
+     */
+    [[nodiscard]] const std::array<int, 3> &getBoardInformation() const;
 
 private:
     Ui::game_info *ui;
     QPushButton *launch_game;
 public:
+    /**
+     *
+     * @return
+     */
     QPushButton *getLaunchGame() const;
 
+/**
+ *
+ */
     void set_data_game();
 
 };

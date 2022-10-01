@@ -17,7 +17,6 @@ struct node{
 };
 struct nodes{
     std::vector<node>column;
-
 };
 
 /**
