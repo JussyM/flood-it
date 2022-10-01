@@ -44,7 +44,6 @@ void game::update_game() {
     position node_center{};
     int i;
     int j;
-    auto old_color = game_board.get_color_at(square_token.at(0));
     for (i = 0; i < game_board.getRow(); ++i) {
         if (square_token.size() == 1) {
             game_board.set_color_at(square_token.at(0), the_chosen_one);
@@ -78,7 +77,6 @@ void game::update_game() {
     std::for_each(square_token.begin(), square_token.end(), [this](position p) {
         this->game_board.set_color_at(p, the_chosen_one);
     });
- //   old_neighbors.clear();
     nbclick++;
 
 }
