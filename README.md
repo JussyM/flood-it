@@ -15,4 +15,5 @@ You would need the Qt tools and therefore modify the CMakeLists.txt file to upda
  - cmake 
 # Preview
 ![board-input](preview/board-info.png)
+![floodit-main-view](preview/main-board.png)
 
