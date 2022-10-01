@@ -18,6 +18,8 @@ void application::start() {
 void application::set_color(color& c) {
     this->game_.setTheChosenOne(c);
     this->game_.update_game();
+    if(this->game_.is_over())
+        this->gui->show_win_msg();
     this->gui->update(this->game_);
 }
 

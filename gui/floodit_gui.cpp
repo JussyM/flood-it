@@ -13,6 +13,11 @@
 floodit_gui::floodit_gui(QWidget *parent) :
         QWidget(parent), ui(new Ui::floodit_gui) {
     ui->setupUi(this);
+    this->ui->msgLabel->setText("HELLO YOU STUPID BITCH "
+                                "THIS IS FLOOD-IT GAME MADE BY ME JUSSY-MI SO\n "
+                                "I'M SURE YOU KNOW THE RULES NORMALLY AFTER\n A "
+                                "MAX OF TRY YOU FAIL BUT SINCE I'M A GOOD MAN\n "
+                                "I WILL LET'S YOU PLAY UNTIL YOU WIN NO LIMIT ENJOY ... ");
 }
 
 floodit_gui::~floodit_gui() {
@@ -106,4 +111,8 @@ void floodit_gui::update(game g) {
         delete element;
 
     init_and_show(g);
+}
+
+void floodit_gui::show_win_msg() {
+this->ui->msgLabel->setText("THE GAME IS OVER YOU OFFICIALLY WIN");
 }

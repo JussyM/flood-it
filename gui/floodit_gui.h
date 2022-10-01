@@ -18,7 +18,10 @@ QT_END_NAMESPACE
 class floodit_gui : public QWidget {
 Q_OBJECT
 
+
+
 public:
+    void show_win_msg();
     explicit floodit_gui(QWidget *parent = nullptr);
     ~floodit_gui() override;
     void init_and_show(game);

@@ -103,6 +103,6 @@ int game::getNbclick() const {
     return nbclick;
 }
 
-bool game::was_neighbor(position p) {
-    return !old_neighbors.empty() && std::any_of(old_neighbors.begin(), old_neighbors.end(), p);
+bool game::is_over() {
+    return square_token.size()==(game_board.getRow()*game_board.getColumn());
 }

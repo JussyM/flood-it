@@ -10,7 +10,6 @@ void board::init_board() {
     he2b::nvs::randomize();
     for (auto &n:square_)
         n.column = std::vector<node>(column_);
-
     for (int i = 0; i < this->row_; ++i) {
         for (int j = 0; j < this->column_; ++j) {
             auto randv = he2b::nvs::random_value(1, nb_color);

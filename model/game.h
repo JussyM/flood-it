@@ -60,6 +60,7 @@ public:
     int getMaxclick() const;
 
     int getNbclick() const;
+    bool is_over();
 
 private:
     int nbclick;
@@ -86,7 +87,7 @@ private:
      * @return true/false
      */
     bool inside_squre_token(position p);
-    bool was_neighbor(position p);
+
 
 
 
