@@ -14,5 +14,5 @@ You would need the Qt tools and therefore modify the CMakeLists.txt file to upda
  - gcc and g++ 
  - cmake 
 # Preview
-[board-input](preview/board-info.png)
+![board-input](preview/board-info.png)
 
