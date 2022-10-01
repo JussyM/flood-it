@@ -55,6 +55,7 @@ private:
     board game_board;
     color the_chosen_one;
     int maxclick=25;
+    std::vector<position>old_neighbors;
 public:
     int getMaxclick() const;
 
@@ -66,7 +67,7 @@ private:
      * get all the neighbors of a particular position
      * @return std::array of position
      */
-    std::array<position,4> get_neighbours(position);
+    static std::array<position,4> get_neighbours(position);
     /**
      * verify if a position is inside the board
      * @param p the position for verification
@@ -85,6 +86,7 @@ private:
      * @return true/false
      */
     bool inside_squre_token(position p);
+    bool was_neighbor(position p);
 
 
 

@@ -3,16 +3,16 @@
 //
 
 #include "application.h"
-#include "../gui/color_button.h"
 
 application::application(QObject *parent) : QObject(parent) {
-    this->user_input = new game_info();
+   this->user_input = new game_info();
     this->gui = new floodit_gui();
 }
 
 void application::start() {
     QObject::connect(this->user_input->getLaunchGame(), SIGNAL(clicked()), this, SLOT(received_data()));
     this->user_input->show();
+    received_data();
 }
 
 void application::set_color(color& c) {
@@ -24,7 +24,7 @@ void application::set_color(color& c) {
 void application::received_data() {
     this->user_input->set_data_game();
     auto data = this->user_input->getBoardInformation();
-    this->game_ = game(data[0], data[1], data[2]);
+    this->game_ = game();
     this->game_.initialize();
     this->user_input->close_windows();
     this->gui->init_and_show(this->game_);

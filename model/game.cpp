@@ -44,6 +44,7 @@ void game::update_game() {
     position node_center{};
     int i;
     int j;
+    auto old_color = game_board.get_color_at(square_token.at(0));
     for (i = 0; i < game_board.getRow(); ++i) {
         if (square_token.size() == 1) {
             game_board.set_color_at(square_token.at(0), the_chosen_one);
@@ -52,33 +53,32 @@ void game::update_game() {
         for (; j < game_board.getColumn(); ++j) {
             auto tmp = position(i, j);
             if (!inside_squre_token(tmp)) {
-                node_center = tmp;
-                auto get_node_color = game_board.get_color_at(node_center);
-                if (has_super_neighbor(node_center)) {
-                    auto neighbours = get_neighbours(node_center);
-                    for (auto &p: neighbours) {
-                        if (this->is_inside_board(p)) {
-                            auto square_color = this->game_board.get_color_at(p);
-                            if (!this->inside_squre_token(p) &&
-                                square_color == the_chosen_one)
-                                this->square_token.push_back(p);
+                    node_center = tmp;
+                    auto get_node_color = game_board.get_color_at(node_center);
+                    if(get_node_color==the_chosen_one)
+                    if (has_super_neighbor(node_center)) {
+                        auto neighbours = get_neighbours(node_center);
+                        for (auto &p: neighbours) {
+                            if (this->is_inside_board(p)) {
+                                auto square_color = this->game_board.get_color_at(p);
+                                if (!this->inside_squre_token(p) &&
+                                    square_color == the_chosen_one)
+                                    this->square_token.push_back(p);
+                            }
+                            old_neighbors.push_back(p);
                         }
+                        if (this->is_inside_board(node_center) && (get_node_color == the_chosen_one))
+                            this->square_token.push_back(node_center);
                     }
-                    if (this->is_inside_board(node_center) && get_node_color == the_chosen_one)
-                        this->square_token.push_back(node_center);
-
-
-
-                }
-
             }
 
         }
-    }
-    std::for_each(square_token.begin(),square_token.end(),[this](position p){
-        this->game_board.set_color_at(p,the_chosen_one);
-    });
 
+    }
+    std::for_each(square_token.begin(), square_token.end(), [this](position p) {
+        this->game_board.set_color_at(p, the_chosen_one);
+    });
+ //   old_neighbors.clear();
     nbclick++;
 
 }
@@ -101,4 +101,8 @@ int game::getMaxclick() const {
 
 int game::getNbclick() const {
     return nbclick;
+}
+
+bool game::was_neighbor(position p) {
+    return !old_neighbors.empty() && std::any_of(old_neighbors.begin(), old_neighbors.end(), p);
 }
