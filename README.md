@@ -12,7 +12,8 @@ You would need the Qt tools and therefore modify the CMakeLists.txt file to upda
 # Required tools
  - Qt 6 or higher
  - gcc and g++ 
- - cmake 
+ - cmake
+ - make 
 # Preview
 ![board-input](preview/board-info.png)
 ![floodit-main-view](preview/main-board.png)
