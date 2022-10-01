@@ -13,8 +13,8 @@
 floodit_gui::floodit_gui(QWidget *parent) :
         QWidget(parent), ui(new Ui::floodit_gui) {
     ui->setupUi(this);
-    this->ui->msgLabel->setText("HELLO YOU STUPID BITCH "
-                                "THIS IS FLOOD-IT GAME MADE BY ME JUSSY-MI SO\n "
+    this->ui->msgLabel->setText("HELLO YOU "
+                                "THIS IS FLOOD-IT GAME SO\n "
                                 "I'M SURE YOU KNOW THE RULES NORMALLY AFTER\n A "
                                 "MAX OF TRY YOU FAIL BUT SINCE I'M A GOOD MAN\n "
                                 "I WILL LET'S YOU PLAY UNTIL YOU WIN NO LIMIT ENJOY ... ");
